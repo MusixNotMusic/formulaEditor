@@ -1,0 +1,279 @@
+ty-formula-editor .ng-invalid{
+  border: 1px solid orangered !important;
+}
+
+ty-formula-editor .wrap {
+  box-shadow:2px 5px 6px 0px rgba(10,10,11,0.5);
+  border: 1px solid black;
+  display: block;
+  position: relative;
+  /* background: teal; */
+}
+ty-formula-editor input {
+  caret-color:orangered;
+}
+
+ty-formula-editor .underscore:focus {
+  border-bottom: 2px solid orangered;
+}
+
+ty-formula-editor .list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(255,255,255,0.2);
+  /* color: white; */
+  width: 100%;
+  height: 36px;
+  margin-right: 2px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+ty-formula-editor li,ol {
+  list-style: none;
+}
+ty-formula-editor ul { 
+  margin:0; padding:0; 
+}
+
+/* 公式列表 */
+ty-formula-editor .ty-metrics-content-formula {
+  width: 100%;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  cursor: text;
+  color: white;
+}
+
+ty-formula-editor .ty-metrics-content-formula > ul {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  width: 100%; 
+}
+
+ty-formula-editor .ty-metrics-content-formula > ul > li {
+  text-align: -webkit-match-parent;
+  height: 30px;
+  max-width: 99%; 
+  padding: 2px;
+  min-height: 22px;
+  position: relative;
+}
+
+ty-formula-editor .formula-parse-error {
+  position: absolute;
+  display: block;
+  left: 4px;
+  bottom: -8px;
+  color: orangered;
+  font-weight: 900;
+}
+
+ty-formula-editor .ty-metrics-content-formula .factor {
+  box-sizing: border-box;
+  min-width: 20px;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+ty-formula-editor .ty-metrics-content-formula .icon-pos{
+  display: none;
+}
+
+ty-formula-editor .ty-metrics-content-formula .factor:hover .icon-pos {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 12px;
+  height: 12px;
+  display: block;
+  border-radius: 100%;
+  background: slategray;
+  color: white;
+}
+
+ty-formula-editor .ty-metrics-content-formula .factor-input{
+  height: 100%;
+}
+
+
+ty-formula-editor .ty-metrics-content-formula .factor .factor-text {
+  color: steelblue;
+  font-size: 14px; 
+}
+
+ty-formula-editor .ty-metrics-content-formula .factor i {
+  font-size: 14px;
+  color: #aaa;
+  margin-left: 2px; 
+}
+/* background: #041E42; */
+ty-formula-editor .ty-metrics-content-formula .factor-id {
+  background: #041E42 !important;
+  color: #AFEADC;
+}
+
+ty-formula-editor .ty-metrics-content-formula .factor-const {
+  background: #AFEADC !important;
+  color: #041E42
+  /* background: blueviolet !important; */
+}
+
+ty-formula-editor .ty-metrics-content-formula .factor-composite {
+  background: brown !important;
+}
+
+ty-formula-editor .formula-input {
+  width: 12px;
+  min-width: 1px;
+  height: 100%;
+  font-size: 100%;
+  line-height: 1;
+  border-width: 0;
+  outline: 0; 
+  padding: 0px;
+  background: antiquewhite;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+  0% { 
+    color: transparent;
+    background: transparent;
+  }
+  100% {
+    color: black;
+    /* background: #eee; */
+    background: #AFEADC;
+    display: block;
+  }
+}
+
+@keyframes fadeOut {
+  0% { 
+    color: black;
+    /* background: #eee; */
+    background: #AFEADC;
+  }
+  100% {
+    color: transparent;
+    background: transparent;
+    display: none;
+  }
+}
+
+ty-formula-editor .fade-in {
+  animation: fadeIn ease 0.5s;
+  -webkit-animation: fadeIn ease 0.5s;
+  -moz-animation: fadeIn ease 0.5s;
+  -o-animation: fadeIn ease 0.5s;
+  -ms-animation: fadeIn ease 0.5s;
+}
+
+ty-formula-editor .fade-out {
+  animation: fadeOut ease 0.5s;
+  -webkit-animation: fadeOut ease 0.5s;
+  -moz-animation: fadeOut ease 0.5s;
+  -o-animation: fadeOut ease 0.5s;
+  -ms-animation: fadeOut ease 0.5s;
+}
+
+ty-formula-editor .wrap .formula-undo{
+  position: absolute;
+  right: 2px;
+  bottom: 5px;
+  width: 26px;
+  height: 26px;
+  border-radius: 100%;
+  cursor: pointer;
+  color: transparent;
+  display: flex;
+  background: transparent;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+
+ty-formula-editor .wrap:hover .fade-in {
+  color:black; background: #AFEADC;
+}
+
+ty-formula-editor .rename-input{
+  outline: 0;
+  padding: 0px;
+  border: 0px;
+  box-sizing: border-box;
+  font-size: 14px;
+} 
+
+/* 下拉 select */
+.formula-select-dropdown {
+  position: absolute;
+  width: 200px; 
+  min-width: 100px;
+  pointer-events: auto;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin: 0;
+  padding: 0;
+  color: rgba(0,0,0,.65);
+  line-height: 1.5;
+  list-style: none;
+  font-feature-settings: 'tnum';
+  z-index: 1050;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-variant: initial;
+  background-color: #fff;
+  border-radius: 4px;
+  outline: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15)
+}
+
+.formula-select-dropdown-menu {
+  max-height: 250px;
+  margin-bottom: 0;
+  padding-left: 0;
+  overflow: auto;
+  list-style: none;
+  outline: 0;
+}
+
+.formula-select-dropdown-menu-item:first-child {
+  border-radius: 4px 4px 0 0;
+}
+
+.formula-select-dropdown-menu-item {
+    position: relative;
+    display: block;
+    padding: 5px 12px;
+    overflow: hidden;
+    color: rgba(0,0,0,.65);
+    font-weight: 400;
+    line-height: 22px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    -webkit-transition: background .3s;
+    transition: background .3s ease;
+}
+
+.formula-select-dropdown-menu-item:hover {
+  background-color: #e6f7ff;
+}
+
+
+
